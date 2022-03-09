@@ -1,0 +1,15 @@
+{
+  "name": "bws-testing",
+  "version": "1.0.0",
+  "private":"true",
+  "description": "bws-testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktoriiaShyrokova/bws-testing.git"
+  },
+  "author": "Viktoriia Shyrokova <vikkiviktorina@gmail.com>",
+  "license": "MIT"
+}
