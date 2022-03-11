@@ -1,11 +1,15 @@
 {
     "compilerOptions": {
+        "outDir": "./build",
+        "allowJs": true,
+        "inlineSourceMap": true,
         "types": [
             "node",
-            "webdriverio/async",
+            "@wdio/sync",
             "@wdio/mocha-framework",
             "expect-webdriverio"
         ],
+        "module": "commonjs",
         "target": "ES5"
     }
 }

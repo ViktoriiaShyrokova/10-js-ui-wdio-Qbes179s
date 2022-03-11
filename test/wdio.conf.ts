@@ -1,3 +1,4 @@
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -48,7 +49,7 @@ export const config: WebdriverIO.Config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.ts'
     ],
     // Patterns to exclude.
     exclude: [
