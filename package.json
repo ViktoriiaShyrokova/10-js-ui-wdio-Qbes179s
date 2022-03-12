@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "private": "true",
     "description": "bws-testing",
+   
     "scripts": {
         "test": "npm run wdio",
         "wdio": "wdio run test/wdio.conf.ts"

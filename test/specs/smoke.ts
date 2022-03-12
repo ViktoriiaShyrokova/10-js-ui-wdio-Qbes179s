@@ -1,9 +1,9 @@
 describe('BWS', function () {
     it('should open', function () {
         browser.url('/')
-        const img = $('img[src="/static/media/logo.f72cfb5f9fb9d7605a71fab31e1d43fb.svg"]')
+        const img = $('img[src$="logo.f72cfb5f9fb9d7605a71fab31e1d43fb.svg"]')
         browser.pause(10000)
-        if(!img.isExisting()) {
+                if(!img.isExisting()) {
             throw new Error('Logo should be displayed')
         }
     })
