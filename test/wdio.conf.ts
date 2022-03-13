@@ -50,7 +50,7 @@ export const config: WebdriverIO.Config = {
     //
     specs: [
       //  './test/specs/**/*.ts'
-      './test/specs/**/sign-in.ts'
+      './test/specs/**/eam.ts'
     ],
     // Patterns to exclude.
     exclude: [

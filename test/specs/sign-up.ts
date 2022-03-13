@@ -1,6 +1,3 @@
-import * as assert from 'assert';
-
-
 describe('Master', async () => {
     it('can register', async () => {
         browser.url('/sign-up')
@@ -10,14 +7,11 @@ describe('Master', async () => {
         $('input[name="name"]').setValue('MASTERautotest')
         $('input[name="password"]').setValue('password')
 
-        const button = await $('.styles_btn__9DPcn')
-        if(!button.isExisting()) {
-            throw new Error('Button not found')
-        }
-        await browser.pause(20000)
-        await button.click()
-       
-    assert(button.isDisplayed(), 'Button to be displayed')
+        await $('button[type="submit"]').click()
+
+        $('button[type="submit"]').addValue('Enter')
+        await browser.pause(5000)
+
         })
   
 })
