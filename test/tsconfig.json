@@ -3,6 +3,8 @@
         "outDir": "./build",
         "allowJs": true,
         "inlineSourceMap": true,
+        // "esModuleInterop": true,
+        // "moduleResolution": "Node",
         "types": [
             "node",
             
