@@ -14,16 +14,18 @@ await browser.pause(1000)
         $('input[name="email"]').setValue('master@test.test')
         $('input[name="password"]').setValue('password')
 
-        const submit = $('button[type="submit"]')
-        await submit.click()
-        await submit.addValue('Enter')
+        await browser.pause(1000)
 
-await browser.pause(1000)
+        const submit = $('button[type="submit"]')
+        await submit.moveTo()
+        await submit.click()
+
+await browser.pause(3000)
 
 //////////////////----CHECK---////////////////////////
         const eam = await $('a[href="/eam"]')
         let check = await eam.isExisting()
-
+        await browser.pause(3000)
         console.log(check + 'FROG')
         assert.equal(check,true)
         } catch (err) {

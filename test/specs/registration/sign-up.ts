@@ -1,6 +1,7 @@
 
 describe('Master', async () => {
     it('can register', async () => {
+        
         browser.url('/sign-up')
 
         const email = new Date().getTime() / 1000 + '@auto.test'
