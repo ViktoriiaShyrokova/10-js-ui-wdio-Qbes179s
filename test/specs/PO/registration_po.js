@@ -1,5 +1,5 @@
 class RegistrationPage {
-    get SignIn_Button () {return $('button[type="submit"]')};
+    get Sign_Button () {return $('button[type="submit"]')};
     get Email_Field () {return $('input[name = "email"]')};
     get Password_Field () {return $('input[name = "password"]')};
     get SignInAsWorker_Button () {return $('button[class = "styles_button__azUJI"]')};

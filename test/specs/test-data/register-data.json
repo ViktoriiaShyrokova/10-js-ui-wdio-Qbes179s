@@ -1,0 +1,8 @@
+{
+    "Email": "master1@test.test",
+    "MasterPassword": "password1",
+    "TenantName": "MASTER1",
+    "WorkerPassword": "e0af9b82-6b19-450a-bfce-fa22cfa38b0f",
+    "TenantNameForWorkerSignIn": "MASTER",
+    "WorkerName": "Bob"
+}
