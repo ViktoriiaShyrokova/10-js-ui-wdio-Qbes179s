@@ -46,6 +46,15 @@ class RegistrationActions {
         reg.Sign_Button.waitForClickable(2000);
         reg.Sign_Button.click();
     }
+    SignInAsMaster() {
+        this.OpenMasterSignInForm();
+        this.FillMasterSignInForm();
+        reg.Sign_Button.waitForClickable(2000);
+        reg.Sign_Button.click();
+        browser.pause(2000)
+        reg.Sign_Button.click();
+
+    }
 }
 
 module.exports = RegistrationActions;
