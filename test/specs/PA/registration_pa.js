@@ -21,28 +21,30 @@ class RegistrationActions {
         reg.SignIn_Link.click();
     }
     FillMasterSignUpForm() {
-        reg.Email_Field.waitForExist();
+        reg.Email_Field.waitForExist(2000);
         reg.Email_Field.setValue(testData.Email);
-        reg.Name_Field.waitForExist();
+        reg.Name_Field.waitForExist(2000);
         reg.Name_Field.setValue(testData.TenantName);
-        reg.Password_Field.waitForExist();
+        reg.Password_Field.waitForExist(2000);
         reg.Password_Field.setValue(testData.MasterPassword);
     }
-    FillMasterSignInForm() {
-        reg.Email_Field.waitForExist();
-        reg.Email_Field.setValue(testData.Email);
-        reg.Password_Field.waitForExist();
-        reg.Password_Field.setValue(testData.MasterPassword);
+    FillMasterSignInForm(Email,MasterPassword) {
+        reg.Email_Field.waitForExist(2000);
+        reg.Email_Field.setValue(Email);
+        reg.Password_Field.waitForExist(2000);
+        reg.Password_Field.setValue(MasterPassword);
     }
-    FillWorkerSignInForm() {
-        reg.TenantName_Field.waitForExist();
-        reg.TenantName_Field.setValue(testData.TenantNameForWorkerSignIn);
-        reg.WorkerName_Field.waitForExist();
-        reg.WorkerName_Field.setValue(testData.WorkerName);
-        reg.Password_Field.waitForExist();
-        reg.Password_Field.setValue(testData.WorkerPassword);
+    FillWorkerSignInForm(TenantName,WorkerName,WorkerPassword) {
+        reg.TenantName_Field.waitForExist(2000);
+        reg.TenantName_Field.setValue(TenantName);
+        reg.WorkerName_Field.waitForExist(2000);
+        reg.WorkerName_Field.setValue(WorkerName);
+        reg.Password_Field.waitForExist(2000);
+        reg.Password_Field.setValue(WorkerPassword);
     }
     Sign() {
+        reg.Sign_Button.waitForExist(2000);
+        reg.Sign_Button.moveTo();
         reg.Sign_Button.waitForClickable(2000);
         reg.Sign_Button.click();
     }
