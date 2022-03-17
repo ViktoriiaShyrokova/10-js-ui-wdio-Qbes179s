@@ -3,15 +3,6 @@ const page = new RegistrationPage();
 
 class RegistrationActions {
 
-    // workerSignIn(tenantName, workerName, password) {
-    //     page.TenantName_Field.setValue(tenantName)
-    //     page.WorkerName_Field.setValue(workerName)
-    //     page.Password_Field.setValue(password)
-    //     page.SignIn_Button.waitForClickable(2000)
-    //     page.SignIn_Button.moveTo()
-    //     page.SignIn_Button.clickSubmit()
-    // }
-
     clickSignInAsWorker() {
         page.SignInAsWorker_Button.waitForClickable(2000)
         page.SignInAsWorker_Button.click()

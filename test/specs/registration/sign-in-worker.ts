@@ -1,39 +1,32 @@
 const assert = require('assert');
- const RegistrationActions = require('../registration/registration_pa')
- const credentials = require('../../testData.json')
+const RegistrationActions = require('../registration/registration_pa')
+const DashboardPage = require('../dashboard/dashboard_po');
+const credentials = require('../../testData.json')
 
- const step = new RegistrationActions;
+const step = new RegistrationActions;
+const page = new DashboardPage();
 
 
 describe('Worker', async () => {
     it('can log in', async () => {
- //       try {
-                
-        // function workerSignIn(tenantName, workerName, password) {
-        //         RegistrationSteps.enterTenantName(tenantName)
-        //         RegistrationSteps.enterWorkerName(workerName)
-        //         RegistrationSteps.enterPassword(password)
-        //         RegistrationSteps.clickSubmit()
-        //     }
+        try {
         browser.url('/')
- 
+        await browser.pause(3000) 
         step.enterTenantName(credentials.TenantName)
         step.enterWorkerName(credentials.WorkerName)
-         step.enterPassword(credentials.WorkerPassword)
-         await browser.pause(3000)
+        step.enterPassword(credentials.WorkerPassword)
+        await browser.pause(3000)
         step.clickSubmit()
-     //   RegistrationSteps.workerSignIn(credentials.TenantName, credentials.WorkerName, credentials.Password)
-     await browser.pause(5000)
+     
 //////////////////----CHECK---////////////////////////
-        const eam = await $('a[href="/eam"]')
-        let check = await eam.isExisting()
+        page.EAM_link.waitForExist(3000)
+        let check = page.EAM_link.isExisting()
 
         console.log(check + 'FROG')
         assert.equal(check,true)
-//         } catch (err) {
-//         console.log(err, '__ERROR__')
-//      }
-// await browser.pause(2000)
+        } catch (err) {
+        console.log(err, '__ERROR__')
+     }
 })
 })
 
