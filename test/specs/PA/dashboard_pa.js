@@ -1,27 +1,32 @@
-const DashboardPage = require('../PO/dashboard_po');
-const page = new DashboardPage();
+
+const dashboard = require('../PO/dashboard_po');
+const dash = new dashboard();
 
 class DashboardActions {
-
-    clickEAMlink() {
-        page.EAM_link.waitForClickable(2000)
-        page.EAM_link.click()
-    }
-
-    clickBSlink() {
-        page.BS_link.waitForClickable(2000)
-        page.BS_link.click()
-    }
-
-    clickSClink() {
-        page.SC_link.waitForClickable(2000)
-        page.SC_link.click()
-    }
-
-    clickSLClink() {
-        page.SLC_link.waitForClickable(2000)
-        page.SLC_link.click()
-    }
     
+    OpenEAM() {
+        dash.EAM.waitForClickable(2000);
+        dash.EAM.click();
+    }
+    OpenBS() {
+        dash.BS.waitForClickable(2000);
+        dash.BS.click();
+    }
+    OpenSC() {
+        dash.SC.waitForClickable(2000);
+        dash.SC.click();
+    }
+    OpenSLC() {
+        dash.SLC.waitForClickable(2000);
+        dash.SLC.click();
+    }
+    Logout() {
+        dash.Menu.waitForClickable(2000);
+        dash.Menu.click();
+        dash.Logout.waitForClickable(2000);
+        dash.Logout.click();
+    }
+
 }
+
 module.exports = DashboardActions;

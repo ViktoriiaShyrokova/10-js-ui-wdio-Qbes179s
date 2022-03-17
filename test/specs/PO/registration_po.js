@@ -1,4 +1,5 @@
 class RegistrationPage {
+
     get Sign_Button () {return $('button[type="submit"]')};
     get Email_Field () {return $('input[name = "email"]')};
     get Password_Field () {return $('input[name = "password"]')};
@@ -10,5 +11,6 @@ class RegistrationPage {
     get SignIn_Link () {return $('a[href="/sign-in"]')};
     get Name_Field () {return $('input[name = "name"]')};
     get Logo () {return $('img[class="styles_signUpLogo__iiydr"]')};
+    
 }
 module.exports = RegistrationPage;
