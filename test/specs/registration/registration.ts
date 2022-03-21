@@ -7,41 +7,35 @@ const check = new dashboard();
 
 describe('User', async () => {
     it('can sign up', async () => {
-        browser.url('/');
-        act.SignUp();
-        await browser.pause(6000);
-        act.Sign();
-        await browser.pause(3000);
+        await browser.url('/');
+        await act.SignUp();
+        await act.Sign();
         /////////CHECK//////////
-        check.EAM.waitForExist(2000);
+        await check.EAM.waitForExist(2000);
         let eamCheck = await check.EAM.isExisting()
-        assert.equal(eamCheck,true)
+        await assert.equal(eamCheck,true)
         await browser.reloadSession();       
     })
     
     it('can sign in as a master', async () => {
-        browser.url('/');
-        act.SignInAsMaster();
-        await browser.pause(6000);
-        act.Sign();
-        await browser.pause(3000);
+        await browser.url('/');
+        await act.SignInAsMaster();
+        await act.Sign();
         /////////CHECK//////////
-        check.EAM.waitForExist(2000);
+        await check.EAM.waitForExist(2000);
         let eamCheck = await check.EAM.isExisting()
-        assert.equal(eamCheck,true)
+        await assert.equal(eamCheck,true)
         await browser.reloadSession();
     })
 
      it('can sign in as a worker', async () => {
-        browser.url('/');
-        act.FillWorkerSignInForm();
-        await browser.pause(5000);
-        act.Sign();
-        await browser.pause(3000);
+        await browser.url('/');
+        await act.FillWorkerSignInForm();
+        await act.Sign();
         /////////CHECK//////////
-        check.EAM.waitForExist(2000);
+        await check.EAM.waitForExist(2000);
         let eamCheck = await check.EAM.isExisting()
-        assert.equal(eamCheck,true)
-        await browser.reloadSession();
+        await assert.equal(eamCheck,true)
+//        await browser.reloadSession();
     })
 })
