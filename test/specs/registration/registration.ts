@@ -1,8 +1,8 @@
-const assert = require('assert');
+var assert = require('assert');
 const RegistrationActions = require('../PA/registration_pa');
 const act = new RegistrationActions(); 
-const dashboard = require('../PO/dashboard_po');
-const check = new dashboard(); 
+var dashboard = require('../PO/dashboard_po');
+var check = new dashboard(); 
 
 
 describe('User', async () => {

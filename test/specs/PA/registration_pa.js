@@ -5,19 +5,19 @@ const testData = require('../test-data/register-data.json');
 class RegistrationActions {
     
     async OpenMasterSignInForm() {
-        await reg.SignInAsMaster_Button.waitForClickable(2000);
+        //await reg.SignInAsMaster_Button.waitForClickable(2000);
         await reg.SignInAsMaster_Button.click();
     }
     async OpenWorkerSignInForm() {
-        await reg.SignInAsWorker_Button.waitForClickable(2000);
+        //await reg.SignInAsWorker_Button.waitForClickable(2000);
         await reg.SignInAsWorker_Button.click();
     }
     async OpenSignUpForm() {
-        await reg.SignUp_Link.waitForClickable(2000);
+        //await reg.SignUp_Link.waitForClickable(2000);
         await reg.SignUp_Link.click();
     }
     async OpenSignInForm() {
-        await reg.SignIn_Link.waitForClickable(2000);
+        //await reg.SignIn_Link.waitForClickable(2000);
         await reg.SignIn_Link.click();
     }
     async FillMasterSignUpForm() {
@@ -42,7 +42,7 @@ class RegistrationActions {
         await reg.Password_Field.setValue(testData.WorkerPassword);
     }
     async Sign() {
-        await reg.Sign_Button.waitForClickable(4000);
+        //await reg.Sign_Button.waitForClickable(4000);
         await reg.Sign_Button.moveTo();
         await reg.Sign_Button.click();
     }
