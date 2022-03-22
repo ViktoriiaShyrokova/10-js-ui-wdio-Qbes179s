@@ -4,32 +4,44 @@ const eamAct = new eam();
 
 class EAMactions {
 
-    async GetTenantName() {
-        await eamAct.ChangeTenantName_Field.waitForClickable(2000);
-        await eamAct.ChangeTenantName_Field.getValue();
-    }
+    // async GetTenantName() {
+    //     await eamAct.Name_Field.waitForClickable(2000);
+    //     await eamAct.Name_Field.getValue();
+    // }
     async ChangeTenantName(Name) {
-        await eamAct.ChangeTenantName_Field.waitForClickable(2000);
-        await eamAct.ChangeTenantName_Field.clearValue();
-        await eamAct.ChangeTenantName_Field.setValue(Name)
+        await eamAct.Name_Field.waitForClickable(2000);
+        await eamAct.Name_Field.clearValue();
+        await eamAct.Name_Field.setValue(Name)
     }
-    async SaveTenantNameButton() {
+    async ClickSaveButton() {
         await eamAct.Save_Button.waitForExist(5000);
         await eamAct.Save_Button.moveTo();
         await eamAct.Save_Button.click();
     }
+
     async AddWorkerButton() {
-        await eamAct.SignInAsWorker_Button.waitForClickable(2000);
-        await eamAct.SignInAsWorker_Button.click();
+        await eamAct.AddWorker_Button.waitForClickable(2000);
+        await eamAct.AddWorker_Button.click();
     }
     async AddGroupButton() {
-        await eamAct.SignUp_Link.waitForClickable(2000);
-        await eamAct.SignUp_Link.click();
+        await eamAct.AddGroup_Button.waitForClickable(2000);
+        await eamAct.AddGroup_Button.click();
     }
-    async FillCreateWorkerForm() {
-        await eamAct.SignIn_Link.waitForClickable(2000);
-        await eamAct.SignIn_Link.click();
+    async FillCreateWorkerForm(Name) {
+    //    let NewWorker = new Date().getTime() / 1000 + 'dev';
+        await eamAct.Name_Field.waitForClickable(2000);
+        await eamAct.Name_Field.setValue(Name)
+        await eamAct.Groups[0].scrollIntoView()
+        await eamAct.Groups[0].moveTo()
+        await eamAct.Groups[0].click()
     }
+    async ClickSaveCSV() {
+        await eamAct.SaveCSV_Button.waitForExist(5000);
+        await eamAct.SaveCSV_Button.scrollIntoView();
+        await eamAct.SaveCSV_Button.moveTo();
+        await eamAct.SaveCSV_Button.click();
+    }
+
     async FillCreateGroupForm() {
         let NewEmail = new Date().getTime() / 1000 + '@test.test';
         await eamAct.Email_Field.setValue(NewEmail);
