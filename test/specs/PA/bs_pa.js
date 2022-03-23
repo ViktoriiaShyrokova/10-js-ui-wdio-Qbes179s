@@ -1,6 +1,7 @@
 const bspo = require('../PO/bs_po');
 const bs = new bspo();
 const testData = require('../test-data/bs-data.json');
+var assert = require('assert');
 
 class BSActions {
     
@@ -13,10 +14,36 @@ class BSActions {
 
     }
 
+    async CheckBucketExist() {
+      let tableCell = await $('tr>td[class="styles_tableCell__C6dnh"]');
+      let tableCellValue = await tableCell.getText();
+      let bucketCreated;
+      if (testData.SpaceName == tableCellValue){
+         bucketCreated = true;
+      }
+      else{
+         bucketCreated = false;
+      }
+      assert.equal(bucketCreated,true);
+    }
+
     async DeleteBucket() {
 
        await bs.Bucket.click();
 
+    }
+
+    async CheckBucketDelete() {
+      let tableCell = await $('tr>td[class="styles_tableCell__C6dnh"]');
+      let tableCellValue = await tableCell.getText();
+      let bucketCreated;
+      if (testData.SpaceName == tableCellValue){
+         bucketCreated = true;
+      }
+      else{
+         bucketCreated = false;
+      }
+      assert.equal(bucketCreated,false);
     }
 
 }
