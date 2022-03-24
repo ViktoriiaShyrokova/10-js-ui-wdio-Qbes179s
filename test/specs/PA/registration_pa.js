@@ -35,7 +35,7 @@ class RegistrationActions {
 
     async FillWorkerSignInForm() {
         await reg.TenantName_Field.waitForExist(2000);
-        await reg.TenantName_Field.setValue(testData.TenantName);
+        await reg.TenantName_Field.setValue(testData.TenantNameForWorkerSignIn);
         await reg.WorkerName_Field.waitForExist(2000);
         await reg.WorkerName_Field.setValue(testData.WorkerName);
         await reg.Password_Field.waitForExist(2000);

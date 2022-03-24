@@ -2,8 +2,8 @@
     "Email": "master@test.test",
     "MasterPassword": "password",
     "TenantName": "MASTER",
-    "WorkerPassword": "e0af9b82-6b19-450a-bfce-fa22cfa38b0f",
-    "TenantNameForWorkerSignIn": "MASTER",
-    "WorkerName": "Bob",
+    "WorkerPassword": "d796193a-1b3e-4fb8-ba19-2d68c51b1f09",
+    "TenantNameForWorkerSignIn": "testuser",
+    "WorkerName": "Lorens",
     "NewTenantName": "MASTERrich"
 }

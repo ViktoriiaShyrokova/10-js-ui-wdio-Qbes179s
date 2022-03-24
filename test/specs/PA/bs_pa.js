@@ -35,10 +35,15 @@ class BSActions {
 
     async CheckBucketDelete() {
       let tableCell = await $('tr>td[class="styles_tableCell__C6dnh"]');
-      let tableCellValue = await tableCell.getText();
       let bucketCreated;
-      if (testData.SpaceName == tableCellValue){
-         bucketCreated = true;
+      if (await tableCell.isExisting() == true){
+         let tableCellValue = await tableCell.getText();
+         if (testData.SpaceName == tableCellValue){
+            bucketCreated = true;
+         }
+         else{
+            bucketCreated = false;
+         }
       }
       else{
          bucketCreated = false;

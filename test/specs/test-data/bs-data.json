@@ -1,3 +1,5 @@
 {
-    "SpaceName": "testspaceee"
+    "SpaceName": "testspaceee",
+    "SuccessCreated": "Space has been successfully created",
+    "SuccessDeleted": "Space has been successfully deleted"
 }
