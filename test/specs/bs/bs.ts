@@ -50,6 +50,7 @@ describe('Worker', async () => {
         await dashact.OpenBS();
         await bsact.DeleteBucket();
         await browser.pause(1500);
+        await bsobj.SuccessIcon.waitForDisplayed();
         let success = await bsobj.Message.getText();
         await assert.equal(success,bsData.SuccessDeleted);
     })

@@ -11,6 +11,8 @@ class RegistrationPage {
     get SignIn_Link () {return $('a[href="/sign-in"]')};
     get Name_Field () {return $('input[name="name"]')};
     get Logo () {return $('img[class="styles_signUpLogo__iiydr"]')};
+    get ErrorIcon () {return $('div[class="notification_attention__obnLi"]')};
+    get ErrorMessage () {return $('div[class="rrt-text"]')};
     
 }
 module.exports = RegistrationPage;

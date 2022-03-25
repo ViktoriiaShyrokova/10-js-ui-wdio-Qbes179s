@@ -5,19 +5,15 @@ const testData = require('../test-data/register-data.json');
 class RegistrationActions {
     
     async OpenMasterSignInForm() {
-        //await reg.SignInAsMaster_Button.waitForClickable(2000);
         await reg.SignInAsMaster_Button.click();
     }
     async OpenWorkerSignInForm() {
-        //await reg.SignInAsWorker_Button.waitForClickable(2000);
         await reg.SignInAsWorker_Button.click();
     }
     async OpenSignUpForm() {
-        //await reg.SignUp_Link.waitForClickable(2000);
         await reg.SignUp_Link.click();
     }
     async OpenSignInForm() {
-        //await reg.SignIn_Link.waitForClickable(2000);
         await reg.SignIn_Link.click();
     }
     async FillMasterSignUpForm() {
@@ -26,29 +22,29 @@ class RegistrationActions {
         await reg.Name_Field.setValue(testData.TenantName);
         await reg.Password_Field.setValue(testData.MasterPassword);
     }
-    async FillMasterSignInForm() {
+    async FillMasterSignInForm(email, masterPassword) {
         await reg.Email_Field.waitForExist(3000);
-        await reg.Email_Field.setValue(testData.Email);
+        await reg.Email_Field.setValue(email);
         await reg.Password_Field.waitForExist(3000);
-        await reg.Password_Field.setValue(testData.MasterPassword);
+        await reg.Password_Field.setValue(masterPassword);
     }
 
-    async FillWorkerSignInForm() {
+    async FillWorkerSignInForm(tenantName, workerName, password) {
         await reg.TenantName_Field.waitForExist(2000);
-        await reg.TenantName_Field.setValue(testData.TenantNameForWorkerSignIn);
+        await reg.TenantName_Field.setValue(tenantName);
         await reg.WorkerName_Field.waitForExist(2000);
-        await reg.WorkerName_Field.setValue(testData.WorkerName);
+        await reg.WorkerName_Field.setValue(workerName);
         await reg.Password_Field.waitForExist(2000);
-        await reg.Password_Field.setValue(testData.WorkerPassword);
+        await reg.Password_Field.setValue(password);
     }
+
     async Sign() {
-        //await reg.Sign_Button.waitForClickable(4000);
         await reg.Sign_Button.moveTo();
         await reg.Sign_Button.click();
     }
-    async SignInAsMaster() {
+    async SignInAsMaster(email, masterPassword) {
         await this.OpenMasterSignInForm();
-        await this.FillMasterSignInForm();
+        await this.FillMasterSignInForm(email, masterPassword);
     }
     async SignUp() {
         await this.OpenMasterSignInForm();

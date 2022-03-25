@@ -7,11 +7,8 @@ class SC {
     get Cancel_Button () {return $('a[href="/sc"]')};
     get Create_Button () {return $('button[type="submit"]')};
     get InstanceName_Field () {return $('input[name="name"]')};
-    get OS_Field () {return $('div[class=" css-ackcql"]')};
+    get OS_Field () {return $('input[name="operationSystemId"]')};
     get UserData_Field () {return $('textarea[name="userData"]')};
     get Bucket () {return $('img[src="/static/media/delete-icon.98786469ba52bc63501716a59174d53c.svg"]')}
-    
-    
-
 }
 module.exports = SC;
